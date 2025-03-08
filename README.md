@@ -3,7 +3,7 @@
 #  taly:
 learning stuff, junior dev, feel free to introduce me to stuff
 # drop a dm if you want
-# all is opensourced c:
+# all is opensourced 
 
 
 # 💻 Tech Stack:
