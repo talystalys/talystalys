@@ -1,7 +1,7 @@
 <img src="banner_github.png" alt="GitHub Banner" width="100%" />
 
 #  taly:
-learning stuff, junior dev, feel free to introduce me to stuff.
+learning stuff, junior dev, feel free to introduce me to stuff
 # drop a dm if you want
 # all is opensourced c:
 
