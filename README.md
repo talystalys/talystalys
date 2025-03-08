@@ -1,6 +1,6 @@
 <img src="banner_github.png" alt="GitHub Banner" width="100%" />
 
-#  taly:
+#  taly
 
 # drop a dm if you want
 # all is opensourced 
