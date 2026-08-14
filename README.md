@@ -19,7 +19,7 @@ x86-64
   <img width="12" />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" height="32" alt="Java" />
   <img width="12" />
-  <code>x86-64</code>
+  <img src="https://raw.githubusercontent.com/github/explore/main/topics/assembly/assembly.png" height="32" alt="Assembly" />
 </div>
 
 <br>
