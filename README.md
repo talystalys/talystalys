@@ -4,10 +4,9 @@
 
 `rust dev`
 
-been taking computers apart, breaking software, and rebuilding both for fun since i was a kid.
+i really like computers
 
 ```text
-$ cat /etc/interests
 systems
 reverse engineering
 linux
