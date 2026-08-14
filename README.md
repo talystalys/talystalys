@@ -7,11 +7,10 @@
 i really like computers
 
 ```text
-systems
+systems engineering
 reverse engineering
 linux
-hardware
-x86-64
+hardware & low level
 ```
 
 <div align="left">
