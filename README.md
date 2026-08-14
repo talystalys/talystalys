@@ -1,32 +1,32 @@
 <img src="banner_github.png" alt="GitHub Banner" width="100%" />
 
-#  taly
+# taly
+
+`rust dev`
+
+been taking computers apart, breaking software, and rebuilding both for fun since i was a kid.
+
+```text
+$ cat /etc/interests
+systems
+reverse engineering
+linux
+hardware
+x86-64
+```
+
 <div align="left">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" height="30" alt="java logo"  />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rust/rust-original.svg" height="32" alt="Rust" />
   <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" height="30" alt="python logo"  />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" height="32" alt="Java" />
   <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" height="30" alt="csharp logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/lua/lua-original.svg" height="30" alt="lua logo"  />
+  <code>x86-64</code>
 </div>
 
-# ayeeeeee
-<div align="left">
-  <img src="https://img.shields.io/static/v1?message=Discord&logo=discord&label=&color=7289DA&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="discord logo"  />
-  <img src="https://img.shields.io/static/v1?message=PayPal&logo=paypal&label=&color=00457C&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="paypal logo"  />
-</div>
+<br>
 
-# wasuuuup
+<a href="https://talystalys.github.io/talystalys/player/">
+  <img src="./assets/vinyl.svg" width="100%" alt="Open taly's turntable" />
+</a>
 
-
-
-
-
-
-
-
-
-
-
-
+<sub>click the record to open the player</sub>
