@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>taly // turntable</title>
+  <style>
+    :root{color-scheme:dark;--bg:#0d1117;--panel:#161b22;--line:#30363d;--muted:#8b949e;--text:#f0f6fc}
+    *{box-sizing:border-box} body{margin:0;min-height:100vh;background:radial-gradient(circle at 50% 0,#161b22 0,#0d1117 42%,#090c10 100%);color:var(--text);font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;display:grid;place-items:center;padding:24px}
+    .shell{width:min(900px,100%);border:1px solid var(--line);background:rgba(13,17,23,.92);border-radius:18px;box-shadow:0 28px 80px rgba(0,0,0,.4);overflow:hidden}
+    .top{padding:14px 18px;border-bottom:1px solid var(--line);color:var(--muted);font-size:13px;display:flex;justify-content:space-between}.dot{color:#3fb950}
+    .deck{display:grid;grid-template-columns:minmax(280px,1fr) 1.1fr;gap:36px;padding:42px;align-items:center}
+    .turntable{position:relative;aspect-ratio:1/1;background:#11161d;border:1px solid #252b33;border-radius:20px;display:grid;place-items:center;overflow:hidden}
+    .record{width:74%;aspect-ratio:1;border-radius:50%;background:repeating-radial-gradient(circle at center,#0b0b0b 0 4px,#191919 5px 6px,#080808 7px 12px);border:1px solid #2a2a2a;box-shadow:0 20px 45px rgba(0,0,0,.45);display:grid;place-items:center;animation:spin 2.3s linear infinite;animation-play-state:paused;cursor:pointer}
+    .record.playing{animation-play-state:running}.label{width:31%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 38% 35%,#ddd,#777 70%);display:grid;place-items:center;color:#111;font-weight:800;font-size:clamp(11px,2vw,16px);letter-spacing:.08em}.label:after{content:"";width:9px;height:9px;background:#0d1117;border-radius:50%;position:absolute}
+    .arm{position:absolute;width:8px;height:44%;right:15%;top:13%;background:#8b949e;border-radius:999px;transform-origin:50% 8%;transform:rotate(-27deg);transition:transform .45s ease;box-shadow:0 0 0 1px #444}.playing~.arm{transform:rotate(-12deg)}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    h1{font-size:clamp(24px,4vw,42px);margin:0 0 8px}.sub{color:var(--muted);margin-bottom:28px}.track{border:1px solid var(--line);background:var(--panel);border-radius:14px;padding:16px 18px;margin-bottom:18px}.track strong{display:block;font-size:14px}.track span{font-size:12px;color:var(--muted)}
+    .controls{display:grid;gap:14px}.row{display:flex;align-items:center;gap:12px}.play{width:48px;height:48px;border-radius:50%;border:1px solid var(--line);background:#f0f6fc;color:#0d1117;font-size:18px;cursor:pointer}.time{min-width:108px;color:var(--muted);font-size:12px}input[type=range]{width:100%;accent-color:#c9d1d9}.labeltxt{width:54px;color:var(--muted);font-size:12px}.load{display:inline-flex;align-items:center;gap:8px;margin-top:18px;padding:10px 12px;border:1px dashed var(--line);border-radius:10px;color:var(--muted);font-size:12px;cursor:pointer}.load input{display:none}.hint{margin-top:18px;color:#6e7681;font-size:11px;line-height:1.6}
+    @media(max-width:720px){.deck{grid-template-columns:1fr;padding:24px}.turntable{max-width:430px;margin:auto;width:100%}}
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <div class="top"><span>taly@github:~/music $ ./turntable</span><span class="dot">● online</span></div>
+    <section class="deck">
+      <div class="turntable">
+        <div id="record" class="record" role="button" aria-label="play or pause"><div class="label">TALY</div></div>
+        <div class="arm"></div>
+      </div>
+      <div>
+        <h1>/dev/turntable</h1>
+        <div class="sub">rust dev // java // x86-64</div>
+        <div class="track"><strong id="title">track.mp3</strong><span id="status">ready</span></div>
+        <div class="controls">
+          <div class="row"><button id="play" class="play">▶</button><div class="time"><span id="now">0:00</span> / <span id="dur">0:00</span></div></div>
+          <div class="row"><span class="labeltxt">seek</span><input id="seek" type="range" min="0" max="100" value="0" /></div>
+          <div class="row"><span class="labeltxt">vol</span><input id="vol" type="range" min="0" max="1" value="0.8" step="0.01" /></div>
+        </div>
+        <label class="load">load local mp3 <input id="file" type="file" accept="audio/*" /></label>
+        <div class="hint">Default source: <code>track.mp3</code> in this folder. If it doesn't exist yet, choose any local audio file above.</div>
+      </div>
+    </section>
+  </main>
+  <audio id="audio" preload="metadata" src="track.mp3"></audio>
+  <script>
+    const audio=document.getElementById('audio'),record=document.getElementById('record'),play=document.getElementById('play'),seek=document.getElementById('seek'),vol=document.getElementById('vol'),file=document.getElementById('file'),now=document.getElementById('now'),dur=document.getElementById('dur'),status=document.getElementById('status'),title=document.getElementById('title');
+    const fmt=s=>Number.isFinite(s)?`${Math.floor(s/60)}:${String(Math.floor(s%60)).padStart(2,'0')}`:'0:00';
+    function sync(){const on=!audio.paused;record.classList.toggle('playing',on);play.textContent=on?'Ⅱ':'▶';status.textContent=on?'playing':'paused'}
+    async function toggle(){try{audio.paused?await audio.play():audio.pause()}catch{status.textContent='add player/track.mp3 or load a local mp3'}}
+    play.onclick=toggle;record.onclick=toggle;audio.onplay=sync;audio.onpause=sync;audio.onended=sync;
+    audio.onloadedmetadata=()=>{dur.textContent=fmt(audio.duration);status.textContent='ready'};
+    audio.ontimeupdate=()=>{now.textContent=fmt(audio.currentTime);seek.value=audio.duration?audio.currentTime/audio.duration*100:0};
+    seek.oninput=()=>{if(audio.duration)audio.currentTime=seek.value/100*audio.duration};vol.oninput=()=>audio.volume=vol.value;audio.volume=vol.value;
+    audio.onerror=()=>{status.textContent='track.mp3 not found — load a local mp3'};
+    file.onchange=()=>{const f=file.files[0];if(!f)return;audio.src=URL.createObjectURL(f);title.textContent=f.name;status.textContent='ready';audio.load()};
+  </script>
+</body>
+</html>
