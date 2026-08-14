@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="220" viewBox="0 0 760 220" role="img" aria-labelledby="title desc">
+  <title id="title">taly turntable</title>
+  <desc id="desc">An animated vinyl record spinning on a minimal terminal-style turntable.</desc>
+  <defs>
+    <radialGradient id="record" cx="50%" cy="45%" r="55%">
+      <stop offset="0" stop-color="#242424"/>
+      <stop offset="0.18" stop-color="#111"/>
+      <stop offset="0.19" stop-color="#2a2a2a"/>
+      <stop offset="0.42" stop-color="#0b0b0b"/>
+      <stop offset="0.43" stop-color="#252525"/>
+      <stop offset="0.67" stop-color="#090909"/>
+      <stop offset="0.68" stop-color="#222"/>
+      <stop offset="1" stop-color="#050505"/>
+    </radialGradient>
+    <radialGradient id="label" cx="45%" cy="38%" r="65%">
+      <stop offset="0" stop-color="#c9c9c9"/>
+      <stop offset="1" stop-color="#707070"/>
+    </radialGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="7" stdDeviation="7" flood-color="#000" flood-opacity=".45"/>
+    </filter>
+  </defs>
+
+  <rect x="1" y="1" width="758" height="218" rx="12" fill="#0d1117" stroke="#30363d"/>
+  <text x="24" y="29" fill="#8b949e" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="13">taly@github:~/music $ ./turntable</text>
+  <circle cx="696" cy="24" r="4" fill="#3fb950"><animate attributeName="opacity" values="1;.25;1" dur="1.8s" repeatCount="indefinite"/></circle>
+
+  <g transform="translate(128 121)" filter="url(#shadow)">
+    <g>
+      <circle r="74" fill="url(#record)" stroke="#373737" stroke-width="1.5"/>
+      <circle r="57" fill="none" stroke="#313131" stroke-width="1"/>
+      <circle r="47" fill="none" stroke="#292929" stroke-width="1"/>
+      <circle r="36" fill="none" stroke="#333" stroke-width="1"/>
+      <circle r="23" fill="url(#label)"/>
+      <path d="M-18 -14 L17 -3 L-8 18 Z" fill="#161b22" opacity=".85"/>
+      <text x="0" y="4" text-anchor="middle" fill="#f0f0f0" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="7" font-weight="700">TALY</text>
+      <circle r="3" fill="#0d1117"/>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="2.25s" repeatCount="indefinite"/>
+    </g>
+  </g>
+
+  <g transform="translate(211 63) rotate(-13)">
+    <circle cx="0" cy="0" r="13" fill="#161b22" stroke="#484f58"/>
+    <rect x="-3" y="4" width="6" height="88" rx="3" fill="#8b949e"/>
+    <rect x="-8" y="87" width="16" height="14" rx="3" fill="#484f58"/>
+    <animateTransform attributeName="transform" additive="sum" type="rotate" values="0 0 0;4 0 0;0 0 0" dur="5s" repeatCount="indefinite"/>
+  </g>
+
+  <text x="291" y="91" fill="#f0f6fc" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="17" font-weight="700">/dev/turntable</text>
+  <text x="291" y="118" fill="#8b949e" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="13">NOW SPINNING   track.mp3</text>
+
+  <g transform="translate(291 142)">
+    <rect width="380" height="5" rx="2.5" fill="#21262d"/>
+    <rect width="150" height="5" rx="2.5" fill="#8b949e">
+      <animate attributeName="width" values="20;355;20" dur="18s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+
+  <text x="291" y="177" fill="#7d8590" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12">click the record → open player</text>
+  <text x="291" y="196" fill="#484f58" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11">rust dev // java // x86-64</text>
+</svg>
