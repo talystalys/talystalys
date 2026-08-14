@@ -11,5 +11,4 @@
 <text x="280" y="122" fill="#ebe7d9" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="26" font-weight="500">Dracula</text>
 <text x="280" y="145" fill="#858a82" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13">Tame Impala · Deadbeat</text>
 <rect x="280" y="163" width="360" height="4" rx="2" fill="#202423"/><rect x="280" y="163" width="80" height="4" rx="2" fill="#f0d455"><animate attributeName="width" values="30;340;30" dur="18s" repeatCount="indefinite"/></rect>
-<text x="280" y="193" fill="#727770" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11">open player → synced lyrics / vinyl never stops</text>
 </svg>
