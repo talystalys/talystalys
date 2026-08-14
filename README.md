@@ -21,11 +21,3 @@ x86-64
   <img width="12" />
   <img src="https://raw.githubusercontent.com/github/explore/main/topics/assembly/assembly.png" height="32" alt="Assembly" />
 </div>
-
-<br>
-
-<a href="https://talystalys.github.io/talystalys/player/">
-  <img src="./assets/vinyl.svg" width="100%" alt="Open taly's turntable" />
-</a>
-
-<sub>click the record to open the player</sub>
